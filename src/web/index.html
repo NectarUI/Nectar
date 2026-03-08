@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gray Background Example</title>
+  <style>
+    body {
+      background-color: gray; /* Sets the background to gray */
+      margin: 0;
+      height: 100vh; /* Makes sure it fills the viewport */
+    }
+  </style>
+</head>
+<body>
+
+<!-- CustomTitlebarDrag -->
+<style id='custom-titlebar-drag'>
+  body {
+    margin: 0;
+  }
+  #titlebar {
+    -webkit-app-region: drag;
+    height: 30px;
+    background-color: transparent;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    gap: 10px;
+  }
+  #titlebar * {
+    -webkit-app-region: no-drag;
+  }
+</style>
+<div id='titlebar'>
+  
+  <input type='text' placeholder='Search...' id='search' style='width:50px;padding:2px 5px;border-radius:4px;border:1px solid #ccc;'/>
+  <span>Hello from NectarUI</span>
+
+  <script>
+    document.getElementById('search').addEventListener('keydown', e => {
+        if(e.key === 'Enter') alert('You searched for: ' + e.target.value);
+    });
+  </script>
+
+</div>
+
+</body>
+</html>
